@@ -1,0 +1,52 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.green-bar {
+    height: 6rem;
+    background-color: rgb(65, 173, 89);
+}
+
+.cream-space {
+    height: 90vh;
+    background-color: bisque;
+}
+
+
+/* WINDOW */
+
+.window {
+    height: 85vh;
+    width: 1300px;
+    position: fixed;
+    background-color: aliceblue;
+    z-index: 99;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.list-chat {
+    height: 100%;
+    width: calc( 100% / 3);
+    background-color: beige;
+}
+
+.conversation {
+    height: 100%;
+    width: calc( 100% / 3 * 2);
+    background-color: rgb(52, 52, 52);
+}
+
+list-chat div {
+    
+}
