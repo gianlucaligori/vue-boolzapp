@@ -35,10 +35,14 @@
     display: flex;
 }
 
+
+/* LEFT SIDE */
+
+
 .list-chat {
     height: 100%;
     width: calc( 100% / 3);
-    background-color:beige;
+    background-color:whitesmoke;
     
 }
 
@@ -73,12 +77,48 @@
     padding: .5rem;
 }
 
+.notification-sett {
+    display: flex;
+    align-items: center;
+    background-color: lightskyblue;
+}
 
+.notification-sett i {
+   background-color: white;
+   padding: .5rem;
+   border-radius: 100%; 
+   margin-inline: 1rem;
+   color: lightskyblue;
+}
+
+.activate-notif-desktop-bottom {
+    font-size: .8rem;
+    text-decoration: underline;
+    color: grey;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    box-shadow: inset 0px 0px 0px 10px lightgray;
+    color: gray;
+}
+
+.search-bar i {
+    margin-inline: 1rem;
+}
+
+
+
+
+/* RIGHT SIDE */
+
+/* CONVERSATION SPACE */
 
 .conversation-window {
     height: 100%;
     width: calc( 100% / 3 * 2);
-    background-color: rgb(183, 183, 183);
+    background-image: url(../assets/img/mine.jpg);
 }
 
 
@@ -110,10 +150,6 @@
     font-size: .8rem;
 }
 
-
-
-/* CONVERSATION SPACE */
-
 .conversation-space {
     height: calc(100% - 130px);
     /* border: 1px solid black; */
@@ -122,7 +158,22 @@
 
 .edit-message-space {
     height: 65px;
-    background-color:rgb(70, 70, 70);
+    background-color:rgb(107, 107, 107);
     border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
+
+
+.text-message {
+    display: flex;
+    align-items: center;
+    padding-inline: 1rem;
+    background-color: white;
+    border-radius: 5px;
+    height: 60%;
+    width: 80%;
+}
+
 
