@@ -118,7 +118,7 @@
 .conversation-window {
     height: 100%;
     width: calc( 100% / 3 * 2);
-    background-image: url(../assets/img/mine.jpg);
+    background-image: url(../img/mine.jpg);
 }
 
 

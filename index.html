@@ -7,8 +7,7 @@
     <title>Boolzapp</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/style.css">
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="assets/script.js" defer></script>
+
 </head>
 <body>
     <div class="container">
@@ -21,7 +20,7 @@
             <div class="user-info">
 
                 <div class="user-data">
-                <img src="assets/img/avatar_io.jpg" alt="">
+                <!-- <img src="assets/img/avatar_io.jpg" alt=""> -->
                 <span>Sofia</span>
                 </div>
 
@@ -48,14 +47,13 @@
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <span>Cerca o inizia una nuova chat</span>
             </div>
-            <div class="chat"></div>
-            <div class="chat"></div>
-            <div class="chat"></div>
-            <div class="chat"></div>
-            <div class="chat"></div>
-            <div class="chat"></div>
-            <div class="chat"></div>
-            <div class="chat"></div>
+            <div v-for="element in contacts"  class="chat">
+
+                <img :src="element.avatar" alt="">
+                <div class="name"> {{ element.name }}</div>
+
+            </div>
+
         </div>
 
 
@@ -64,7 +62,7 @@
             <div class="chatter">
 
                 <div class="chatter-data">
-                    <img src="assets/img/avatar_1.jpg" alt="">
+                    <img src="img/avatar_1.jpg" alt="">
                     <div class="name-data-chatter">
                         <div class="name-chatter">Michele</div>
                         <div class="data-last-access">Ultimo accesso alle ore 19:11</div>
@@ -95,7 +93,8 @@
     </div>
 
 
-
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="assets/script.js"></script>
 
 </body>
 </html>
