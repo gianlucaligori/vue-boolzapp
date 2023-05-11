@@ -5,96 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boolzapp</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/style.css">
-
 </head>
 <body>
-    <div class="container">
-        <div class="green-bar"></div>
-        <div class="cream-space"></div>
-    </div>
+    
+    <div class="app container light">
+		<div class="content">
 
-    <div class="window">
-        <div class="list-chat">
-            <div class="user-info">
+			<div class="side">
+				<div class="user">
+					<img class="avatar" src="img/avatar_io.jpg" alt="">
+					<div class="name">Pinco Pallino Pinco Pallino Pinco Pallino Pinco Pallino</div>
+					<i class="fas fa-circle-notch btn"></i>
+					<i class="fas fa-comment-alt btn"></i>
+					<i class="fas fa-ellipsis-v btn"></i>
+				</div>
 
-                <div class="user-data">
-                <!-- <img src="assets/img/avatar_io.jpg" alt=""> -->
-                <span>Sofia</span>
-                </div>
+				<div class="notifications"></div>
 
-                <div class="buttons-user" >
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-message"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
-
-            </div>
-
-            <div class="notification-sett">
-                <div>
-                    <i class="fa-solid fa-bell-slash"></i>
-                </div>
-
-                <div>
-                    <div class="activate-notif-desktop-top" >Ricevi notifiche di nuovi messaggi</div>
-                    <div class="activate-notif-desktop-bottom" >Attiva notifiche desktop</div>
-                </div>
-            </div>
-
-            <div class="search-bar">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <span>Cerca o inizia una nuova chat</span>
-            </div>
-            <div v-for="element in contacts"  class="chat">
-
-                <img :src="element.avatar" alt="">
-                <div class="name"> {{ element.name }}</div>
-
-            </div>
-
-        </div>
+				<div class="contacts">
+					<div class="search">
+						<div class="input-group">
+							<i class="fa fa-search icon" aria-hidden="true"></i>
+							<input type="text" class="input-search"  placeholder="Cerca o inizia una nuova chat">
+						</div>
+					</div>
+					<ul class="contact-list">
+						<li v-for="contact in contacts" class="contact">
+							<img class="avatar" :src="contact.avatar" :alt="contact.name">
+							<div class="info">
+								<div class="name">{{ contact.name }}</div>
+								<div class="last-message">
+									Last message here
+								</div>
+							</div>
+							<div class="last-date">5/10/2022</div>
+						</li>
+					</ul>
+				</div>
+			</div>
 
 
+			<div class="main">
+				<div class="contact">
+					<img class="avatar" :src="contacts[activeIndex].avatar" alt="">
+					<div class="info">
+						<div class="name"> {{ contacts[activeIndex].name }} </div>
+						<div class="last-access">Ultimo accesso oggi alle 10/01/2020 16:15:22</div>
+					</div>
+					<i class="fas fa-search btn"></i>
+					<i class="fas fa-paperclip btn"></i>
+					<i class="fas fa-ellipsis-v btn"></i>
+				</div>
 
-        <div class="conversation-window">
-            <div class="chatter">
+				<div class="messages">
+					<div v-for="message in contacts[activeIndex].messages" class="message sent">
+						<div class="text">
+							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo non expedita ullam natus fugiat consequatur laborum ut? Vitae molestiae voluptas laborum repellat provident perferendis cum omnis neque vel, magnam quis.
+						</div>
+						<div class="date">10/01/2020 15:30:55</div>
+					</div>
+				</div>
 
-                <div class="chatter-data">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <div class="name-data-chatter">
-                        <div class="name-chatter">Michele</div>
-                        <div class="data-last-access">Ultimo accesso alle ore 19:11</div>
-                    </div>
-                </div>
+				<div class="add-message">
+					<i class="far fa-smile btn"></i>
+					<input type="text" class="message-text" placeholder="Scrivi un messaggio">
+					<i class="fa fa-microphone btn"></i>
+				</div>
+			</div>
 
-                <div class="chatter-settings">
-                    <i class="fa-solid fa-circle-notch"></i>
-                    <i class="fa-solid fa-message"></i>
-                    <i class="fa-solid fa-ellipsis-vertical"></i>
-                </div>
+		</div>
+	</div>
 
-            </div>
-
-            <div class="conversation-space"></div>
-
-            <div class="edit-message-space">
-
-                <div><i class="fa-regular fa-face-smile"></i></div>
-
-                <div class="text-message">
-                    <span>Scrivi qui il tuo messaggio</span>
-                </div>
-
-                <div><i class="fa-solid fa-microphone"></i></div>
-            </div>
-        </div>
-    </div>
-
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+	<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="assets/script.js"></script>
-
 </body>
 </html>
