@@ -61,9 +61,14 @@
 
 				<div class="messages">
 					<div v-for="message in contacts[activeIndex].messages" class="message sent">
-						<div class="text">
-							Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo non expedita ullam natus fugiat consequatur laborum ut? Vitae molestiae voluptas laborum repellat provident perferendis cum omnis neque vel, magnam quis.
-						</div>
+
+						<div class="text"
+						v-for="eleMessage in contacts[activeIndex].messages"
+						:key="eleMessage.date"
+						:class="eleMessage.status === 'sent' ? 'sent' : 'received'">
+						{{ eleMessage.message}} 
+						{{ eleMessage.date}}
+					</div>
 						<div class="date">10/01/2020 15:30:55</div>
 					</div>
 				</div>
