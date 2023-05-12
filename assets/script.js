@@ -2,12 +2,17 @@
 // Click sul contatto mostra la conversazione del contatto cliccato
 
 
+// Milestone 3
+// Aggiunta di un messaggio: l’utente scrive un testo nella parte bassa e digitando “enter” il testo viene aggiunto al thread sopra, come messaggio verde
+// Risposta dall’interlocutore: ad ogni inserimento di un messaggio, l’utente riceverà un “ok” come risposta, che apparirà dopo 1 secondo.
 
 const app = Vue.createApp({
 	data() {
 		return {
 
             activeIndex: 0,
+            newMessage: '',
+
 
 			contacts: [
 				{
@@ -177,16 +182,28 @@ const app = Vue.createApp({
 					],
 				}
 			],
-			activeIndex: 0,
 		};
 	},
+
 	methods: {
-		filterContacts() {
-			const filteredArray = [];
-			// const filteredArray = .filter()
-			return filteredArray;
-		}
+        setActiveIndex (x) {
+            this.activeIndex = x 
+        },
+
+        addMessage(textToSend, pippo){
+            let mex = { 
+                date: '15:00',
+                message: textToSend,
+                status: 'sent'
+             }
+            
+             this.contacts[pippo].messages.push(mex)
+
+                this.newMessage='';
+            }
 	},
+
+
 	computed: {
 		filteredContacts() {
 			const filteredArray = [];
